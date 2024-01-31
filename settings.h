@@ -3,7 +3,7 @@
 #endif
 
 #ifndef VERSION
-#define VERSION 2
+#define VERSION 1
 #endif
 
 #ifndef DEBUG
@@ -12,7 +12,7 @@
 
 #define SERIAL_BAUDRATE 74880
 
-#define BOOT_COUNT_UPDATE 10
+#define BOOT_COUNT_UPDATE 30 // SLEEP_TIME * BOOT_COUNT_UPDATE = период запроса обновлений (10 минут)
 
 #define WIFI_NAME "tplink140"
 #define WIFI_PASSWORD "12love34"
@@ -26,7 +26,7 @@
 
 #define TEMP_SENSOR_TYPE 0 // 0 - sht40, 1 - aht10
 
-#define SLEEP_TIME 20e6 // 5 sec
+#define SLEEP_TIME 20e6 // 20 sec
 
 #define TEMPERATURE_DIFF 0.2
 #define HUMIDITY_DIFF 1

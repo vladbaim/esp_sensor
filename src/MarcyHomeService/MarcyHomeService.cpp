@@ -1,5 +1,10 @@
 #include "MarcyHomeService.h"
 
+double round2(double value)
+{
+  return (int)(value * 100 + 0.5) / 100.0;
+}
+
 MarcyHomeService::MarcyHomeService(struct MarcyHomeServiceParams initParams)
 {
   params = initParams;
@@ -48,8 +53,8 @@ void MarcyHomeService::setSensorData(SensorData data)
     JsonDocument doc;
     doc["version"] = params.version;
     doc["position"] = params.position;
-    doc["temperature"] = data.temperature;
-    doc["humidity"] = data.humidity;
+    doc["temperature"] = round2(data.temperature);
+    doc["humidity"] = round2(data.humidity);
     doc["carbon_dioxide"] = data.carbonDioxide;
     String body;
     serializeJson(doc, body);
